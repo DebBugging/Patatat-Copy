@@ -14,22 +14,10 @@
 <!-- Define inlined PaperScript associate it with myCanvas -->
 <script type="text/paperscript" canvas="myCanvas">
 
-for(var x = 0; x < 2000; x+= 20) {
-  for (var y = 0; y < 2000; y+= 20) {
-
-  var circle = new Path.Circle(new Point(x,y), 10);
-  circle.fillColor = 'black';
-
-  // When the mouse enters the item, set color to green.
-    circle.onMouseEnter = function(event) {
-    this.fillColor = 'green';
-    }
-
-  // When the mouse exits the item, set color to purple.
-    circle.onMouseLeave = function(event) {
-    this.fillColor = 'purple';
-    }
-  }
+function onKeyDown(event) {
+  // When a key is pressed, make a circle:
+  var circle = new Path.Circle(new Point(100, 100), 10);
+  circle.fillColor = 'grey';
 }
 
 </script>
