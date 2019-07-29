@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />`1
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Bloop Blip</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="round.css">
@@ -13,22 +13,25 @@
 <script type="text/javascript" src="js/paper.js"></script>
 <!-- Define inlined PaperScript associate it with myCanvas -->
 <script type="text/paperscript" canvas="myCanvas">
-	// Create a Paper.js Path to draw a line into it:
-	var path = new Path();
-	// Give the stroke a color
-	path.strokeColor = 'green';
-	var start = new Point(100, 100);
-	// Move to start and draw a line from there
-	path.moveTo(start);
-	// Note the plus operator on Point objects.
-	// PaperScript does that for us, and much more!
-  path.lineTo(start + [ 100, 100 ]);
-  
-  var myCircle = new Path.Circle(new Point(100, 70), 10);
-myCircle.fillColor = 'black';
 
-var circle2 = new Path.Circle(new Point(100, 100), 40);
-circle2.fillColor = 'orange';
+for(var x = 0; x < 2000; x+= 20) {
+  for (var y = 0; y < 2000; y+= 20) {
+
+  var circle = new Path.Circle(new Point(x,y), 10);
+  circle.fillColor = 'black';
+
+  // When the mouse enters the item, set color to green.
+    circle.onMouseEnter = function(event) {
+    this.fillColor = 'green';
+    }
+
+  // When the mouse exits the item, set color to purple.
+    circle.onMouseLeave = function(event) {
+    this.fillColor = 'purple';
+    }
+  }
+}
+
 </script>
   </head>
   <body>
